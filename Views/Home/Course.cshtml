@@ -1,0 +1,127 @@
+﻿<head>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    .edit-profile-form {
+        display: none;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .label {
+        color: black;
+        font-weight: bold;
+    }
+
+    .input-field {
+        width: 100%;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .edit-profile-form {
+        display: none;
+        margin-top: 20px;
+        padding: 15px;
+        color: black;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: antiquewhite;
+    }
+
+</style>
+<body>
+    <div id="fileUploadForm" class="edit-profile-form">
+        <form method="post">
+            <label class="label" for="Course_ID">
+                Course Id:
+                <input type="text" name="Course_ID" class="input-field">
+            </label>
+
+            <label class="label" for="Course">
+                Course:
+                <input type="text" name="Course" class="input-field">
+            </label>
+
+            <label class="label" for="Tuition_Fee">
+                Tuition Fee:
+                <input type="text" name="Tuition_Fee" class="input-field">
+            </label>
+
+            <label class="label" for="Start_Date">
+                Start Date:
+                <input type="text" name="Start_Date" class="input-field">
+            </label>
+
+            <label class="label" for="End_Date">
+                End Date:
+                <input type="text" name="End_Date" class="input-field">
+            </label>
+
+            <label class="label" for="Total_Subject">
+                Total Subject:
+                <input type="text" name="Total Subject" class="input-field">
+            </label>
+
+        </form>
+    </div>
+
+    <button class="btn1" onclick="toggleAddUserForm()">Add Course</button>
+
+    <table style="width:100%">
+        <tr>
+            <th>Course Id</th>
+            <th>Course</th>
+            <th>Tuition Fee</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Total_Subject</th>
+            <th scope="col" class="text-center">Actions</th>
+        </tr>
+        <tr>
+            <td>NA</td>
+            <td>NA</td>
+            <td>NA</td>
+            <td>NA</td>
+            <td>NA</td>
+            <td>NA</td>
+            <td>
+                <button class="btn btn-outline-yellow btn-sm">
+                    <i class='bx bx-edit-alt'></i>
+                </button>
+                <button class="btn btn-outline-yellow btn-sm">
+                    <i class='bx bx-trash'></i>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>NA</td>
+            <td>NA</td>
+            <td>NA</td>
+            <td>NA</td>
+            <td>NA</td>
+            <td>NA</td>
+            <td>
+                <button class="btn btn-outline-yellow btn-sm">
+                    <i class='bx bx-edit-alt'></i>
+                </button>
+                <button class="btn btn-outline-yellow btn-sm">
+                    <i class='bx bx-trash'></i>
+                </button>
+            </td>
+        </tr>
+    </table>
+</body>
+<script>
+
+    function toggleAddUserForm() {
+            var form = document.getElementById('fileUploadForm');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        }
+
+</script>

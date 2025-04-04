@@ -18,7 +18,24 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Privacy()
+
+    public IActionResult Student()
+    {
+        return View();
+    }
+    public IActionResult Course()
+    {
+        return View();
+    }
+    public IActionResult Section()
+    {
+        return View();
+    }
+    public IActionResult Room()
+    {
+        return View();
+    }
+    public IActionResult Teacher()
     {
         return View();
     }

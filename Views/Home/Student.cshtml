@@ -1,0 +1,119 @@
+﻿<head>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<style>
+    table, th, td {
+      border:1px solid black;
+    }
+
+    .edit-profile-form {
+        display: none;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .label {
+        color: black;
+        font-weight: bold;
+    }
+
+    .input-field {
+        width: 100%;
+        margin-bottom: 10px;
+        font-weight:bold;
+    }
+
+    .edit-profile-form {
+        display: none;
+        margin-top: 20px;
+        padding: 15px;
+        color: black;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color:antiquewhite;
+    }
+
+</style>
+<body>
+    <div id="fileUploadForm" class="edit-profile-form">
+		<form method="post">
+			<label class="label" for="Student_Id">
+				Student Id:
+				<input type="text" name="Student_Id" class="input-field">
+			</label>
+
+            <label class="label" for="Lastname">
+				Lastname:
+				<input type="text" name="Lastname" class="input-field">
+			</label>
+
+			<label class="label" for="Firstname">
+				Firstname:
+				<input type="text" name="Firstname" class="input-field">
+			</label>
+
+            <label class="label" for="Middlename">
+				Middlename:
+				<input type="text" name="Middlename" class="input-field">
+			</label>
+
+			<label class="label" for="ContactNo">
+				Contact Number:
+				<input type="text" name="ContactNo" class="input-field">
+			</label>
+
+		</form>
+    </div>
+
+    <button class="btn1" onclick="toggleAddUserForm()">Add Student</button>
+
+    <table style="width:100%">
+        <tr>
+            <th>Student ID</th>
+            <th>Lastname</th>
+            <th>Firstname</th>
+            <th>Middlename</th>
+            <th>Contact_Number</th>
+            <th scope="col" class="text-center">Actions</th>
+        </tr>
+        <tr>
+            <td>NA</td>
+            <td>NA</td>
+            <td>NA</td>
+            <td>NA</td>
+            <td>NA</td>
+            <td>
+                <button class="btn btn-outline-yellow btn-sm">
+					<i class='bx bx-edit-alt'></i>
+				</button>
+                <button class="btn btn-outline-yellow btn-sm">
+                    <i class='bx bx-trash'></i>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>NA</td>
+            <td>NA</td>
+            <td>NA</td>
+            <td>NA</td>
+            <td>NA</td>
+            <td>
+                <button class="btn btn-outline-yellow btn-sm">
+                    <i class='bx bx-edit-alt'></i>
+                </button>
+                <button class="btn btn-outline-yellow btn-sm">
+                    <i class='bx bx-trash'></i>
+                </button>
+            </td>
+        </tr>
+    </table>
+    </body>
+    <script>
+
+    function toggleAddUserForm() {
+            var form = document.getElementById('fileUploadForm');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        }
+
+    </script>
