@@ -15,18 +15,20 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        
-        using (var db=new StudInfoSysContext())
-        {
-            resp.Stud = db.Students.ToList();
-        }
         return View();
     }
 
 
     public IActionResult Student()
     {
-        return View();
+
+        StudentPageViewModel resp = new StudentPageViewModel();
+
+        using (var db = new StudInfoSysContext())
+        {
+            resp.Stud = db.Students.ToList();
+        }
+        return View(resp);
     }
     public IActionResult Course()
     {
@@ -42,7 +44,13 @@ public class HomeController : Controller
     }
     public IActionResult Teacher()
     {
-        return View();
+        TeacherPageViewModel resp = new TeacherPageViewModel ();
+
+        using (var db = new StudInfoSysContext())
+        {
+            resp.teac = db.Teachers.ToList();
+        }
+        return View(resp);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

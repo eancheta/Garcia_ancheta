@@ -11,7 +11,7 @@ namespace Garcia_ancheta.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-LR57J5O\\SQLEXPRESS;Database=StudInfoSys;");
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-LR57J5O\\SQLEXPRESS;Initial Catalog=StudInfoSys; Integrated Security=True;Trust Server Certificate=true");
         }
     }
 }

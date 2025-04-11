@@ -1,37 +1,39 @@
-﻿<head>
+﻿@model TeacherPageViewModel
+
+<head>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <style>
     table, th, td {
-        border: 1px solid black;
+    border: 1px solid black;
     }
 
     .edit-profile-form {
-        display: none;
-        width: 100%;
-        margin-top: 20px;
+    display: none;
+    width: 100%;
+    margin-top: 20px;
     }
 
     .label {
-        color: black;
-        font-weight: bold;
+    color: black;
+    font-weight: bold;
     }
 
     .input-field {
-        width: 100%;
-        margin-bottom: 10px;
-        font-weight: bold;
+    width: 100%;
+    margin-bottom: 10px;
+    font-weight: bold;
     }
 
     .edit-profile-form {
-        display: none;
-        margin-top: 20px;
-        padding: 15px;
-        color: black;
-        border: 1px solid black;
-        border-radius: 5px;
-        background-color: antiquewhite;
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: antiquewhite;
     }
 
 </style>
@@ -74,47 +76,42 @@
     <button class="btn1" onclick="toggleAddUserForm()">Add Teacher</button>
 
     <table style="width:100%">
-        <tr>
-            <th>Teacher ID</th>
-            <th>Teacher Firstname</th>
-            <th>Teacher Lastname</th>
-            <th>Teacher Middlename</th>
-            <th>Faculty</th>
-            <th>Specialization</th>
-            <th scope="col" class="text-center">Actions</th>
-        </tr>
-        <tr>
-            <td>NA</td>
-            <td>NA</td>
-            <td>NA</td>
-            <td>NA</td>
-            <td>NA</td>
-            <td>NA</td>
-            <td>
-                <button class="btn btn-outline-yellow btn-sm">
-                    <i class='bx bx-edit-alt'></i>
-                </button>
-                <button class="btn btn-outline-yellow btn-sm">
-                    <i class='bx bx-trash'></i>
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td>NA</td>
-            <td>NA</td>
-            <td>NA</td>
-            <td>NA</td>
-            <td>NA</td>
-            <td>NA</td>
-            <td>
-                <button class="btn btn-outline-yellow btn-sm">
-                    <i class='bx bx-edit-alt'></i>
-                </button>
-                <button class="btn btn-outline-yellow btn-sm">
-                    <i class='bx bx-trash'></i>
-                </button>
-            </td>
-        </tr>
+        <thead>
+            <tr>
+                <th>Teacher ID</th>
+                <th>Teacher Firstname</th>
+                <th>Teacher Lastname</th>
+                <th>Teacher Middlename</th>
+                <th>Faculty</th>
+                <th>Specialization</th>
+                <th scope="col" class="text-center">Actions</th>
+            </tr>
+
+        </thead>
+		<tbody>
+			@foreach (var row in Model.teac)
+			{
+             <tr>
+               
+                <td>@row.Teacher_ID</td>
+                <td>@row.Teacher_FirstName</td>
+                <td>@row.Teacher_MiddleName</td>
+                <td>@row.Teacher_LastName</td>
+                <td>@row.Faculty</td>
+                <td>@row.Specialization</td>
+                <td>
+                    <button class="btn btn-outline-yellow btn-sm">
+                        <i class='bx bx-edit-alt'></i>
+                    </button>
+                    <button class="btn btn-outline-yellow btn-sm">
+                        <i class='bx bx-trash'></i>
+                    </button>
+                </td>
+            </tr>
+			}
+            
+
+        </tbody>
     </table>
 </body>
 <script>
