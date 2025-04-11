@@ -15,11 +15,11 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        
-        using (var db=new StudInfoSysContext())
-        {
-            resp.Stud = db.Students.ToList();
-        }
+
+        //using (var db=new StudInfoSysContext())
+        //{
+        //    resp.Stud = db.Students.ToList();
+        //}
         return View();
     }
 
@@ -38,7 +38,12 @@ public class HomeController : Controller
     }
     public IActionResult Room()
     {
-        return View();
+        RoomPageViewModel resp = new RoomPageViewModel();
+        using(var db = new StudInfoSysContext())
+        {
+            resp.Rooms = db.Rooms.ToList();
+        }
+        return View(resp);
     }
     public IActionResult Teacher()
     {
