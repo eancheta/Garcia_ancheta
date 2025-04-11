@@ -15,6 +15,11 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        
+        using (var db=new StudInfoSysContext())
+        {
+            resp.Stud = db.Students.ToList();
+        }
         return View();
     }
 
