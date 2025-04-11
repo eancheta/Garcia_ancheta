@@ -1,37 +1,38 @@
-﻿<head>
+﻿@model RoomPageViewModel
+<head>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <style>
     table, th, td {
-        border: 1px solid black;
+    border: 1px solid black;
     }
 
     .edit-profile-form {
-        display: none;
-        width: 100%;
-        margin-top: 20px;
+    display: none;
+    width: 100%;
+    margin-top: 20px;
     }
 
     .label {
-        color: black;
-        font-weight: bold;
+    color: black;
+    font-weight: bold;
     }
 
     .input-field {
-        width: 100%;
-        margin-bottom: 10px;
-        font-weight: bold;
+    width: 100%;
+    margin-bottom: 10px;
+    font-weight: bold;
     }
 
     .edit-profile-form {
-        display: none;
-        margin-top: 20px;
-        padding: 15px;
-        color: black;
-        border: 1px solid black;
-        border-radius: 5px;
-        background-color: antiquewhite;
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: antiquewhite;
     }
 
 </style>
@@ -69,44 +70,38 @@
     <button class="btn1" onclick="toggleAddUserForm()">Add Room</button>
 
     <table style="width:100%">
-        <tr>
-            <th>Room ID</th>
-            <th>Room Number</th>
-            <th>Floor</th>
-            <th>Building</th>
-            <th>Capacity</th>
-            <th scope="col" class="text-center">Actions</th>
-        </tr>
-        <tr>
-            <td>NA</td>
-            <td>NA</td>
-            <td>NA</td>
-            <td>NA</td>
-            <td>NA</td>
-            <td>
-                <button class="btn btn-outline-yellow btn-sm">
-                    <i class='bx bx-edit-alt'></i>
-                </button>
-                <button class="btn btn-outline-yellow btn-sm">
-                    <i class='bx bx-trash'></i>
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td>NA</td>
-            <td>NA</td>
-            <td>NA</td>
-            <td>NA</td>
-            <td>NA</td>
-            <td>
-                <button class="btn btn-outline-yellow btn-sm">
-                    <i class='bx bx-edit-alt'></i>
-                </button>
-                <button class="btn btn-outline-yellow btn-sm">
-                    <i class='bx bx-trash'></i>
-                </button>
-            </td>
-        </tr>
+        <thead>
+            <tr>
+                <th>Room ID</th>
+                <th>Room Number</th>
+                <th>Floor</th>
+                <th>Building</th>
+                <th>Capacity</th>
+                <th scope="col" class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var row in Model.Rooms)
+            {
+                <tr>
+                    <td>@row.Room_ID</td>
+                    <td>@row.Room_Number</td>
+                    <td>@row.Floor</td>
+                    <td>@row.Building</td>
+                    <td>@row.Capacity</td>
+                    <td>
+                        <button class="btn btn-outline-yellow btn-sm">
+                            <i class='bx bx-edit-alt'></i>
+                        </button>
+                        <button class="btn btn-outline-yellow btn-sm">
+                            <i class='bx bx-trash'></i>
+                        </button>
+                    </td>
+                </tr>
+            }
+            
+        </tbody>
+        
     </table>
 </body>
 <script>
